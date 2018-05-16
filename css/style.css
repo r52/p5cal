@@ -1,0 +1,529 @@
+#cal {
+    position: absolute;
+    transform: translateY(40px);
+}
+
+div#month, div#month_shadow_s, div#month_shadow_l, div.num, div.shadow_s, div.shadow_l, div#day, div#time, div#icon_s, div#weather {
+    background: url('../img/sprite.png');
+    background-repeat: no-repeat;
+}
+
+
+/* month divs */
+
+#month {
+    position: absolute;
+    height: 77px;
+    width: 77px;
+    transform: translate(20px, 20px);
+    z-index: 20;
+}
+
+#month_shadow_s {
+    position: absolute;
+    height: 102px;
+    width: 102px;
+    filter: invert(100%);
+    transform: translate(10px, 10px);
+    z-index: 10;
+}
+
+#month_shadow_l {
+    position: absolute;
+    height: 122px;
+    width: 122px;
+    z-index: 1;
+}
+
+
+/* date divs */
+
+
+/* first number */
+
+#num_1 {
+    position: absolute;
+    transform: translate(82px, 8px) rotate(10deg);
+    z-index: 21;
+}
+
+#num_shadow_s_1 {
+    position: absolute;
+    transform: translate(70px, -5px) rotate(10deg);
+    z-index: 11;
+}
+
+#num_shadow_l_1 {
+    position: absolute;
+    transform: translate(62px, -15px) rotate(10deg);
+    z-index: 2;
+}
+
+
+/* 2 digit value mods for first number  */
+
+#num_1.double {
+    transform: translate(82px, 16px) rotate(-2deg);
+}
+
+#num_shadow_s_1.double {
+    transform: translate(70px, 4px) rotate(-2deg);
+}
+
+#num_shadow_l_1.double {
+    transform: translate(62px, -6px) rotate(-2deg);
+}
+
+
+/* second number */
+
+#num_2 {
+    position: absolute;
+    transform: translate(135px, 6px) rotate(5deg);
+    z-index: 22;
+}
+
+#num_shadow_s_2 {
+    position: absolute;
+    transform: translate(123px, -6px) rotate(5deg);
+    z-index: 12;
+}
+
+#num_shadow_l_2 {
+    position: absolute;
+    transform: translate(116px, -15px) rotate(5deg);
+    z-index: 3;
+}
+
+
+/* day of week div */
+
+#day {
+    position: absolute;
+    height: 74px;
+    width: 194px;
+    transform: translate(80px, 50px) rotate(-10deg);
+    z-index: 30;
+}
+
+
+/* time div*/
+
+#time {
+    position: absolute;
+    height: 70px;
+    width: 76px;
+    transform: translate(0px, 120px) rotate(-15deg);
+    z-index: 30;
+}
+
+
+/* weather icon div/sprite/animations */
+
+#icon_s {
+    position: absolute;
+    height: 104px;
+    width: 104px;
+    transform: translate(190px, -25px);
+    z-index: 4;
+}
+
+#icon_s.icon_s {
+    background-position: -1542px -2565px;
+}
+
+#weather {
+    position: absolute;
+    height: 72px;
+    width: 72px;
+    filter: invert(100%);
+    transform: translate(202px, -10px);
+    z-index: 13;
+}
+
+#weather.sun {
+    background-position: -1026px -2565px;
+    animation: sunplay 3s steps(3) infinite;
+}
+
+@keyframes sunplay {
+    100% {
+        background-position: -1026px -2782px;
+    }
+}
+
+#weather.cloud {
+    background-position: -1100px -2565px;
+    animation: cloudplay 3s steps(3) infinite;
+}
+
+@keyframes cloudplay {
+    100% {
+        background-position: -1100px -2782px;
+    }
+}
+
+#weather.rain {
+    background-position: -1026px -2787px;
+    animation: rainplay 3s steps(3) infinite;
+}
+
+@keyframes rainplay {
+    100% {
+        background-position: -1026px -3003px;
+    }
+}
+
+#weather.snow {
+    background-position: -1100px -2787px;
+    animation: snowplay 3s steps(3) infinite;
+}
+
+@keyframes snowplay {
+    100% {
+        background-position: -1100px -3003px;
+    }
+}
+
+
+/* time sprites */
+
+#time.morning {
+    background-position: -1644px -2562px;
+}
+
+#time.bnoon {
+    width: 100px;
+    background-position: -1720px -2562px;
+}
+
+#time.anoon {
+    width: 100px;
+    background-position: -1720px -2633px;
+}
+
+#time.night {
+    background-position: -1644px -2633px;
+}
+
+#time.midnight {
+    width: 100px;
+    background-position: -1827px -2633px;
+}
+
+
+/* day sprites */
+
+#day.monday {
+    background-position: -516px -3862px;
+}
+
+#day.tuesday {
+    background-position: -714px -3862px;
+}
+
+#day.wednesday {
+    background-position: -908px -3862px;
+}
+
+#day.thursday {
+    background-position: -516px -3939px;
+}
+
+#day.friday {
+    background-position: -714px -3939px;
+}
+
+#day.saturday {
+    background-position: -516px -4015px;
+}
+
+#day.sunday {
+    background-position: -714px -4015px;
+}
+
+
+/* number sprites */
+
+.num {
+    height: 102px;
+    width: 68px;
+}
+
+.shadow_s {
+    height: 122px;
+    width: 88px;
+    filter: invert(100%);
+}
+
+.shadow_l {
+    height: 142px;
+    width: 100px;
+}
+
+.n0.num {
+    background-position: -887px -3109px;
+}
+
+.n0.shadow_s {
+    background-position: -638px -2564px;
+}
+
+.n0.shadow_l {
+    background-position: -726px -2561px;
+}
+
+.n1.num {
+    background-position: -961px -3112px;
+}
+
+.n1.shadow_s {
+    background-position: -641px -2691px;
+}
+
+.n1.shadow_l {
+    background-position: -826px -2561px;
+}
+
+.n2.num {
+    background-position: -890px -3227px;
+}
+
+.n2.shadow_s {
+    background-position: -641px -2815px;
+}
+
+.n2.shadow_l {
+    background-position: -928px -2561px;
+}
+
+.n3.num {
+    background-position: -958px -3227px;
+}
+
+.n3.shadow_s {
+    background-position: -550px -2808px;
+}
+
+.n3.shadow_l {
+    background-position: -727px -2697px;
+}
+
+.n4.num {
+    background-position: -823px -3103px;
+}
+
+.n4.shadow_s {
+    background-position: -552px -2933px;
+}
+
+.n4.shadow_l {
+    background-position: -827px -2698px;
+}
+
+.n5.num {
+    background-position: -957px -3343px;
+}
+
+.n5.shadow_s {
+    background-position: -548px -3056px;
+}
+
+.n5.shadow_l {
+    background-position: -923px -2694px;
+}
+
+.n6.num {
+    background-position: -957px -3456px;
+}
+
+.n6.shadow_s {
+    background-position: -638px -2939px;
+}
+
+.n6.shadow_l {
+    background-position: -727px -2828px;
+}
+
+.n7.num {
+    background-position: -889px -3340px;
+}
+
+.n7.shadow_s {
+    background-position: -728px -2968px;
+}
+
+.n7.shadow_l {
+    background-position: -825px -2830px;
+}
+
+.n8.num {
+    background-position: -889px -3459px;
+}
+
+.n8.shadow_s {
+    background-position: -818px -2971px;
+}
+
+.n8.shadow_l {
+    background-position: -924px -2830px;
+}
+
+.n9.num {
+    background-position: -749px -3103px;
+}
+
+.n9.shadow_s {
+    background-position: -640px -3065px;
+}
+
+.n9.shadow_l {
+    background-position: -925px -2965px;
+}
+
+
+/* month sprites */
+
+.jan #month {
+    background-position: -476px -2569px;
+}
+
+.jan #month_shadow_s {
+    background-position: -260px -2574px;
+}
+
+.jan #month_shadow_l {
+    background-position: -12px -2570px;
+}
+
+.feb #month {
+    background-position: -475px -2648px;
+}
+
+.feb #month_shadow_s {
+    background-position: -260px -2679px;
+}
+
+.feb #month_shadow_l {
+    background-position: -11px -2687px;
+}
+
+.mar #month {
+    background-position: -472px -2727px;
+}
+
+.mar #month_shadow_s {
+    background-position: -258px -2788px;
+}
+
+.mar #month_shadow_l {
+    background-position: -10px -2809px;
+}
+
+.apr #month {
+    background-position: -470px -2811px;
+}
+
+.apr #month_shadow_s {
+    background-position: -256px -2899px;
+}
+
+.apr #month_shadow_l {
+    background-position: -6px -2932px;
+}
+
+.may #month {
+    background-position: -473px -2893px;
+}
+
+.may #month_shadow_s {
+    background-position: -258px -3010px;
+}
+
+.may #month_shadow_l {
+    background-position: -9px -3055px;
+}
+
+.jun #month {
+    background-position: -472px -2972px;
+}
+
+.jun #month_shadow_s {
+    background-position: -257px -3116px;
+}
+
+.jun #month_shadow_l {
+    background-position: -7px -3173px;
+}
+
+.jul #month {
+    background-position: -471px -3052px;
+}
+
+.jul #month_shadow_s {
+    background-position: -369px -2571px;
+}
+
+.jul #month_shadow_l {
+    background-position: -134px -2567px;
+}
+
+.aug #month {
+    background-position: -471px -3136px;
+}
+
+.aug #month_shadow_s {
+    background-position: -366px -2682px;
+}
+
+.aug #month_shadow_l {
+    background-position: -131px -2690px;
+}
+
+.sep #month {
+    background-position: -554px -2569px;
+}
+
+.sep #month_shadow_s {
+    background-position: -366px -2792px;
+}
+
+.sep #month_shadow_l {
+    background-position: -130px -2812px;
+}
+
+.oct #month {
+    background-position: -549px -2647px;
+}
+
+.oct #month_shadow_s {
+    background-position: -360px -2897px;
+}
+
+.oct #month_shadow_l {
+    background-position: -127px -2929px;
+}
+
+.nov #month {
+    background-position: -551px -2728px;
+}
+
+.nov #month_shadow_s {
+    background-position: -364px -3006px;
+}
+
+.nov #month_shadow_l {
+    background-position: -128px -3049px;
+}
+
+.dec #month {
+    background-position: -568px -3302px;
+}
+
+.dec #month_shadow_s {
+    background-position: -362px -3114px;
+}
+
+.dec #month_shadow_l {
+    background-position: -126px -3171px;
+}

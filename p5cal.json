@@ -1,0 +1,8 @@
+{
+    "name": "p5cal",
+    "width": 400,
+    "height": 300,
+    "startFile": "index.html",
+    "transparentBg": true,
+    "remoteAccess": true
+}
