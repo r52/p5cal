@@ -30,7 +30,7 @@ function toggle_date_2(show) {
     $("#num_2").toggle(show);
 }
 
-function update() {
+function update_time() {
     var now = moment();
     var month = now.format("MMM").toLowerCase();
     var date = now.date();
@@ -70,15 +70,16 @@ function update() {
     }
 
     $("#time").removeClass().addClass(tod);
+}
 
-    // weather
+function update_weather() {
     if (weatherKey && weatherUrl && weatherCity) {
         var wurl = weatherUrl + "?q=" + weatherCity + "&appid=" + weatherKey;
 
         $.ajax({
             url: wurl,
             dataType: "json",
-            success: function(data) {
+            success: function (data) {
                 var weather = "";
                 var group = data["weather"][0]["main"];
 
@@ -100,7 +101,10 @@ function update() {
     }
 }
 
-$(function() {
-    update();
-    setInterval(update, 300000);
+$(function () {
+    update_time();
+    update_weather();
+
+    setInterval(update_time, 60000);
+    setInterval(update_weather, 900000);
 });
