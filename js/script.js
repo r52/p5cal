@@ -79,6 +79,10 @@ function update_weather() {
         $.ajax({
             url: wurl,
             dataType: "json",
+            error: function (xhr) {
+                var resp = JSON.parse(xhr.responseText);
+                console.log(resp.cod + ": " + resp.message);
+            },
             success: function (data) {
                 var weather = "";
                 var group = data["weather"][0]["main"];
