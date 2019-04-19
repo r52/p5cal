@@ -107,8 +107,12 @@ function update_weather() {
 
 $(function () {
     update_time();
-    update_weather();
-
     setInterval(update_time, 60000);
-    setInterval(update_weather, 900000);
+
+    if (weatherKey && weatherUrl && weatherCity) {
+        update_weather();
+        setInterval(update_weather, 900000);
+    } else {
+        console.warn("p5cal: Weather options not set!");
+    }
 });
